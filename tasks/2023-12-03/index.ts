@@ -22,7 +22,7 @@ export function znajdzWorek(
   lokalizacje.forEach((lokalizacja) => {
     const { x, y, z, czas } = lokalizacja;
     const wartosc = mapa(x, y, z, czas);
-    if (!isNaN(wartosc) && isFinite(wartosc) && wartosc > najwiekszaWartosc) {
+    if (wartosc > najwiekszaWartosc) {
       najwiekszaWartosc = wartosc;
       najlepszaLokalizacja = lokalizacja;
     }
