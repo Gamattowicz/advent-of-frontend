@@ -8,11 +8,10 @@ export class ChristmasQueue<T> {
 
   enqueue(gift: T, id: number): void {
     this.giftList.push({ name: gift, priority: id });
+    this.giftList.sort((a, b) => b.priority - a.priority);
   }
 
   dequeue(): T {
-    this.giftList.sort((a, b) => b.priority - a.priority);
-
     const result = this.giftList.shift();
 
     if (result) {
